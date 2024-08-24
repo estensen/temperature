@@ -63,3 +63,22 @@ fn kelvin_to_celsius(kelvin: f64) -> f64 {
 fn kelvin_to_fahrenheit(kelvin: f64) -> f64 {
     celsius_to_fahrenheit(kelvin_to_celsius(kelvin))
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_celsius_to_fahrenheit() {
+        let celsius = 0.0;
+        let fahrenheit = celsius_to_fahrenheit(celsius);
+        assert_eq!(fahrenheit, 32.0);
+    }
+
+    #[test]
+    fn test_celsius_to_kelvin() {
+        let celsius = 0.0;
+        let kelvin = celsius_to_kelvin(celsius);
+        assert_eq!(kelvin, 273.15);
+    }
+}
